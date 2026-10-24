@@ -80,29 +80,26 @@ export default function App() {
   }
 
   // Every second the song is playing, move the progress bar forward
+  // Once a second: move the progress bar forward, or handle the song ending
   useEffect(() => {
     if (!isPlaying) return;
 
-    const timer = setInterval(() => {
-      setProgress((p) => p + 1);
+    const timer = setTimeout(() => {
+      if (progress + 1 < SONG_LENGTH) {
+        setProgress(progress + 1);
+      } else if (repeat) {
+        setProgress(0);
+      } else if (canGoNext) {
+        playNext();
+      } else {
+        setIsPlaying(false);
+        setProgress(0);
+      }
     }, 1000);
 
-    return () => clearInterval(timer);
-  }, [isPlaying]);
-
-  // When the song reaches the end: repeat it, play the next one, or stop
-  useEffect(() => {
-    if (progress < SONG_LENGTH) return;
-
-    if (repeat) {
-      setProgress(0);
-    } else if (canGoNext) {
-      playNext();
-    } else {
-      setIsPlaying(false);
-      setProgress(0);
-    }
-  }, [progress]);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying, progress, repeat, canGoNext]);
 
   return (
     <>
