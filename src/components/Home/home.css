@@ -1,0 +1,252 @@
+.home {
+  background: linear-gradient(
+    to bottom,
+    #1f1f1f 0px,
+    #141414 300px,
+    #121212 6000px
+  );
+  position: fixed;
+  top: 62px;
+  left: 335px;
+  right: 275px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: calc(100vh - 152px);
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #5a5a5a transparent;
+  color: white;
+}
+.home.wide {
+  right: 5px;
+}
+
+.home-first-row {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.home-first-row p {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  background-color: #424242;
+  border-radius: 20px;
+  width: 82px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.home-first-row p:hover {
+  border: 1px solid rgb(94, 92, 92);
+}
+
+.recently-played,
+.made-for-you {
+  display: flex;
+  gap: 25px;
+}
+
+.recently-played-card img,
+.made-for-you-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  object-fit: cover;
+}
+.recently-played-card img:hover,
+.made-for-you-card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.recently-played-card-info h3 {
+  margin: 0;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 150px;
+  overflow: hidden;
+}
+
+.made-for-you-card-info p {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/*Playlist view*/
+.playlist-view {
+  background: linear-gradient(
+    to bottom,
+    #4a4a4a 0px,
+    #292929 300px,
+    #181818 400px,
+    #070707 500px
+  );
+
+  min-height: 100%;
+  padding: 20px;
+  color: white;
+}
+
+.playlist-view button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 25px;
+}
+
+/*header*/
+.playlist-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+  padding: 25px 0;
+  background: transparent;
+}
+.playlist-header img {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.playlist-info h1 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 5px 0;
+}
+.playlist-info p {
+  color: grey;
+  margin: 0;
+}
+
+.playlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 10px 0 20px;
+}
+
+.playlist-actions button {
+  border: none;
+  background: none;
+  color: #b3b3b3;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.playlist-actions button:hover {
+  color: white;
+}
+
+.playlist-actions .play-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1ed760;
+  color: black;
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playlist-actions .play-button:hover {
+  background-color: #1fdf64;
+  color: black;
+  transform: scale(1.04);
+}
+
+/*songs list*/
+.playlist-songs {
+  border-top: 1px solid rgba(182, 180, 180, 0.15);
+  padding-top: 10px;
+}
+
+.playlist-song-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 5px;
+  gap: 15px;
+  cursor: pointer;
+}
+.playlist-song-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-song-card img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.playlist-song-card-info {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.playlist-song-card-info h3 {
+  margin: 0;
+  margin-bottom: 1px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.playlist-song-card-info p {
+  font-size: 12px;
+  margin: 3px 0 0;
+  color: #b3b3b3;
+}
+
+/*heart button on each song row*/
+.playlist-song-card .like-btn {
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: #b3b3b3;
+  font-size: 20px;
+  cursor: pointer;
+}
+.playlist-song-card .like-btn:hover {
+  color: white;
+}
+.playlist-song-card .like-btn.liked {
+  color: #1ed760;
+}
+
+.no-results {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.liked-cover {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3925d1, #bba4d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+}

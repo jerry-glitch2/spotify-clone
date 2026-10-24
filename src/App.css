@@ -1,0 +1,8 @@
+body {
+  background: black;
+}
+
+.main-layout {
+  display: flex;
+  margin-top: 62px;
+}
